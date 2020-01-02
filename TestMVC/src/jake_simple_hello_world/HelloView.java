@@ -14,7 +14,7 @@ import javax.swing.JTextField;
 public class HelloView extends JFrame implements Observer {
 	private static final long serialVersionUID = 1L;
 	private final int WNDSIZE_W = 200;
-	private final int WNDSIZE_H = 140;
+	private final int WNDSIZE_H = 100;
 	private final String S_TITLE = "Hello, MVC!";
 	private Container ct;
 
@@ -53,14 +53,15 @@ public class HelloView extends JFrame implements Observer {
 
 	@Override
 	public void update(Observable o, Object arg) {
-		jtf.setText("" + ((Integer)arg).intValue());
+		jtf.setText(Integer.toString(((Integer)arg).intValue()));
 	}
 	
 	public void setValue(int v) {
-		jtf.setText(Integer.toString(v));
+		jtf.setText("" + v);
 	}
 	
 	public void addController(HelloController controller) {
+		// controller 할당 : 이벤트 리스너 달기
 		System.out.println("View : adding controller");
 		jbtn.addActionListener(controller);
 	}

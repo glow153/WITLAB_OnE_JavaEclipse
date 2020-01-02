@@ -46,7 +46,11 @@ public class VCalculator extends JFrame implements Observer {
 		jpCalc.add(jtfResult);
 		ct.add(jpCalc);
 	}
-
+	
+	private void addListeners(){
+		
+	}
+	
 	private void initWnd(){
 		setSize(WNDSIZE_W, WNDSIZE_H);
 		setTitle(S_TITLE);
@@ -57,6 +61,7 @@ public class VCalculator extends JFrame implements Observer {
 	public VCalculator(){
 		initComps();
 		addComps();
+		addListeners();
 		initWnd();
 	}
 	
